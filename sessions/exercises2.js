@@ -57,9 +57,9 @@ class databaseFactory {
     }
 
     createDatabse(options) {
-        const { databaseCredential, ...rest } = options;
+        const { databaseType, ...rest } = options;
 
-        switch(databaseCredential) {
+        switch(databaseType) {
             case 'defaultDB':
                 this.database = defaultDB;
                 break;
@@ -80,9 +80,9 @@ class databaseFactory {
 
 const dataBaseFactory = new databaseFactory();
 
-const database = dataBaseFactory.createDatabse({
-    databaseCredential: 'TextDB',
+const databaseTextDB = dataBaseFactory.createDatabse({
+    databaseType: 'TextDB',
     databaseName : 'TextDBName'
 });
 
-console.log(database);
+console.log(databaseTextDB);
