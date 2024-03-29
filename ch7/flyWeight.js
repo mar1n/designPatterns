@@ -41,6 +41,7 @@ class CoffeeFlavorFactory {
     let flavor = this.flavors[flavorName];
     if (!flavor) {
       flavor = new CoffeeFlavor(flavorName);
+      console.log("flavor", flavor);
       if (implementsInterface(flavor, CoffeeOrder)) {
         this.flavors[flavorName] = flavor;
         this.length++;
@@ -79,7 +80,9 @@ function testFlyweight() {
   takeOrders("Latte", 4);
   takeOrders("Espresso", 1);
   takeOrders("Americano", 3);
-
+  takeOrders("Cappuccino", 7);
+  // console.log("falvors", flavors[0].serveCoffee(tables[0]));
+  // console.log("tables", tables);
   for (let i = 0; i < ordersMade; ++i) {
     flavors[i].serveCoffee(tables[i]);
   }
