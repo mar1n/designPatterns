@@ -128,9 +128,10 @@
         const check = document.createElement("input");
         check.type = "checkbox";
         check.classList.add("observer");
+        console.log('concreteSubject', controlCheckbox);
         const checkObserver = new ConcreteObserver(check);
-
-        controlCheckbox.addObserver(checkObserver);
+        console.log('concreteSubject', controlCheckbox);
+        //controlCheckbox.addObserver(checkObserver);
 
         container.appendChild(check);
         observerCount++;
@@ -138,6 +139,7 @@
       };
 
       const countObservers = () => {
+        console.log("Observer Count", observerCount);
         observerCountElem.textContent = `Observer Count: ${observerCount}`;
       };
 
@@ -152,6 +154,7 @@
       };
 
       const updateObserverCount = () => {
+        console.log("Observer Count", observerCount);
         observerCountElem.textContent = `Observer Count: ${observerCount}`;
       };
 
